@@ -1,0 +1,6 @@
+category_name,expected_result
+Health Monitors,visible
+Pain Relief,visible
+Baby Care,visible
+Fake Category,not_visible
+Invalid Product,not_visible
