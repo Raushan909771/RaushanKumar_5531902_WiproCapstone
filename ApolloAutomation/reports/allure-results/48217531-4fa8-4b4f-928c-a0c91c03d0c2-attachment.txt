@@ -1,0 +1,3 @@
+[32mINFO    [0m root:basepage.py:73 Checking popup on page
+[32mINFO    [0m root:basepage.py:33 Checking visibility of element: ('xpath', "//*[normalize-space()='Baby Care']")
+[32mINFO    [0m root:basepage.py:18 Locating the element: ('xpath', "//*[normalize-space()='Baby Care']")

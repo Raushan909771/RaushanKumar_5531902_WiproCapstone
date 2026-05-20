@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 from pages.basepage import BasePage
@@ -29,9 +30,9 @@ class ShopByCategoryPage(BasePage):
         "//label[@for='checkboxcategory0']//h3[normalize-space()='Brands']"
     )
 
-    ADD_BUTTONS = (
+    EXACT_ADD_BUTTON = (
         By.XPATH,
-        "//button[@aria-label='Add' and .//span[normalize-space()='Add']]"
+        "(//button[@aria-label='Add' and .//span[normalize-space()='Add']])[1]"
     )
 
     CART_ICON = (
@@ -46,7 +47,12 @@ class ShopByCategoryPage(BasePage):
 
     EMPTY_CART_TEXT = (
         By.XPATH,
-        "//*[contains(text(),'empty') or contains(text(),'Empty') or contains(text(),'Your cart is empty')]"
+        "//*[contains(text(),'YOUR CART IS EMPTY') or contains(text(),'Your cart is empty') or contains(text(),'empty') or contains(text(),'Empty')]"
+    )
+
+    PROCEED_BUTTON = (
+        By.XPATH,
+        "//button[@title='Proceed' and @aria-label='Button' and .//span[normalize-space()='Proceed']]"
     )
 
     def is_category_visible(self, category_name, timeout=5):
@@ -152,7 +158,10 @@ class ShopByCategoryPage(BasePage):
                     .trim()
                     .toLowerCase();
 
-                if (text === 'doctor s choice' || text.includes('doctor s choice')) {
+                if (
+                    text === 'doctor s choice' ||
+                    text.includes('doctor s choice')
+                ) {
                     element.scrollIntoView({block: 'center'});
                     element.click();
                     return true;
@@ -170,38 +179,27 @@ class ShopByCategoryPage(BasePage):
 
         raise Exception("Doctor S Choice filter option not found")
 
-    def get_first_available_add_button(self):
+    def get_exact_add_button(self):
 
-        logger.info("Finding first available Add button")
+        logger.info("Finding exact Add button")
 
-        WebDriverWait(self.driver, 15).until(
-            lambda driver:
-            len(driver.find_elements(*self.ADD_BUTTONS)) > 0
+        add_button = self.get_element(
+            self.EXACT_ADD_BUTTON,
+            timeout=20
         )
 
-        add_buttons = self.driver.find_elements(*self.ADD_BUTTONS)
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({block:'center'});",
+            add_button
+        )
 
-        for button in add_buttons:
+        time.sleep(2)
 
-            try:
-                if button.is_displayed() and button.is_enabled():
-
-                    button_text = button.text.strip().lower()
-
-                    if button_text == "add":
-
-                        logger.info("Available Add button found")
-
-                        return button
-
-            except Exception:
-                continue
-
-        raise Exception("No available Add button found")
+        return add_button
 
     def get_product_name_from_add_button(self, add_button):
 
-        logger.info("Getting product name from selected product card")
+        logger.info("Getting product name from selected Add button")
 
         product_name = self.driver.execute_script(
             """
@@ -230,11 +228,13 @@ class ShopByCategoryPage(BasePage):
 
                         if (
                             !lower.includes('add') &&
-                            !lower.includes('₹') &&
+                            !lower.includes('rs') &&
                             !lower.includes('mrp') &&
                             !lower.includes('off') &&
                             !lower.includes('%') &&
                             !lower.includes('rating') &&
+                            !lower.includes('cart') &&
+                            !lower.includes('bestseller') &&
                             line.length > 5
                         ) {
                             return line;
@@ -259,13 +259,9 @@ class ShopByCategoryPage(BasePage):
 
         return product_name
 
-    def add_one_doctor_s_choice_product_to_cart(self):
+    def click_exact_add_button_once(self, add_button):
 
-        logger.info("Adding one Doctor S Choice product to cart")
-
-        self.close_popup_if_present()
-
-        add_button = self.get_first_available_add_button()
+        logger.info("Clicking exact Add button one time")
 
         self.driver.execute_script(
             "arguments[0].scrollIntoView({block:'center'});",
@@ -274,26 +270,49 @@ class ShopByCategoryPage(BasePage):
 
         time.sleep(1)
 
-        product_name = self.get_product_name_from_add_button(add_button)
+        button_text = add_button.text.strip()
 
-        logger.info(f"Product selected for cart: {product_name}")
+        logger.info(f"Add button text before click: {button_text}")
+
+        assert button_text.lower() == "add", \
+            "Add button is not available"
 
         try:
             add_button.click()
+            logger.info("Clicked Add using normal Selenium click")
+            return
 
-        except Exception:
-            logger.info("Normal Add click failed, trying JavaScript click")
+        except Exception as e:
+            logger.info(f"Normal Selenium click failed: {e}")
 
-            self.driver.execute_script(
-                "arguments[0].click();",
-                add_button
-            )
+        try:
+            ActionChains(self.driver)\
+                .move_to_element(add_button)\
+                .pause(1)\
+                .click(add_button)\
+                .perform()
 
-        logger.info("Clicked Add button only once")
+            logger.info("Clicked Add using ActionChains")
+            return
 
-        time.sleep(5)
+        except Exception as e:
+            logger.info(f"ActionChains click failed: {e}")
 
-        return product_name
+        self.driver.execute_script(
+            """
+            const button = arguments[0];
+
+            button.scrollIntoView({block:'center'});
+
+            button.dispatchEvent(new MouseEvent('mouseover', {bubbles: true}));
+            button.dispatchEvent(new MouseEvent('mousedown', {bubbles: true}));
+            button.dispatchEvent(new MouseEvent('mouseup', {bubbles: true}));
+            button.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+            """,
+            add_button
+        )
+
+        logger.info("Clicked Add using JavaScript mouse events")
 
     def go_to_cart(self):
 
@@ -308,13 +327,13 @@ class ShopByCategoryPage(BasePage):
             logger.info("Cart icon click failed, opening cart directly")
             self.driver.get("https://www.apollopharmacy.in/cart")
 
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 15).until(
             lambda driver:
             "cart" in driver.current_url.lower()
             or len(driver.find_elements(*self.CART_TEXT)) > 0
         )
 
-        time.sleep(3)
+        time.sleep(5)
 
     def is_cart_page_opened(self):
 
@@ -347,14 +366,12 @@ class ShopByCategoryPage(BasePage):
 
         logger.info(f"Checking exact product in cart: {product_name}")
 
-        time.sleep(2)
+        time.sleep(3)
 
         if self.is_cart_empty():
             return False
 
         cart_text = self.driver.find_element(By.TAG_NAME, "body").text
-
-        logger.info(f"Cart page text: {cart_text}")
 
         if product_name.lower() in cart_text.lower():
             logger.info("Exact product found in cart")
@@ -362,3 +379,191 @@ class ShopByCategoryPage(BasePage):
 
         logger.error("Exact product not found in cart")
         return False
+
+    def add_exact_product_to_cart_with_retry(self, max_attempts=3):
+
+        logger.info("Adding exact product to cart with retry")
+
+        product_name = None
+
+        for attempt in range(1, max_attempts + 1):
+
+            logger.info(f"Add product attempt: {attempt}")
+
+            self.driver.get(self.HEALTH_MONITORS_URL)
+
+            WebDriverWait(self.driver, 10).until(
+                lambda driver:
+                "apollo-brand-health-monitors" in driver.current_url
+            )
+
+            time.sleep(4)
+
+            self.apply_doctor_s_choice_filter()
+
+            add_button = self.get_exact_add_button()
+
+            product_name = self.get_product_name_from_add_button(add_button)
+
+            logger.info(f"Trying to add product: {product_name}")
+
+            self.click_exact_add_button_once(add_button)
+
+            time.sleep(7)
+
+            self.go_to_cart()
+
+            if (
+                self.is_cart_page_opened()
+                and self.is_exact_product_present_in_cart(product_name)
+            ):
+                logger.info("Product added and verified in cart successfully")
+                return product_name
+
+            logger.error("Product not found in cart after Add click")
+
+        raise AssertionError(
+            f"Product was not added to cart after {max_attempts} attempts"
+        )
+
+    def click_proceed_button(self):
+
+        logger.info("Clicking Proceed button on cart page")
+
+        assert self.is_cart_page_opened(), \
+            "Cart page is not opened, cannot click Proceed"
+
+        assert not self.is_cart_empty(), \
+            "Cart is empty, cannot click Proceed"
+
+        # Proceed button is usually near bottom/right cart summary
+        self.driver.execute_script(
+            "window.scrollTo(0, document.body.scrollHeight);"
+        )
+
+        time.sleep(3)
+
+        clicked = self.driver.execute_script(
+            """
+            const elements = Array.from(
+                document.querySelectorAll('button, span, div')
+            );
+
+            function normalizeText(value) {
+                return (value || '')
+                    .replace(/\\s+/g, ' ')
+                    .trim()
+                    .toLowerCase();
+            }
+
+            function isVisible(element) {
+                const style = window.getComputedStyle(element);
+                const rect = element.getBoundingClientRect();
+
+                return (
+                    style.display !== 'none' &&
+                    style.visibility !== 'hidden' &&
+                    rect.width > 0 &&
+                    rect.height > 0
+                );
+            }
+
+            for (const element of elements) {
+
+                if (!isVisible(element)) {
+                    continue;
+                }
+
+                const text = normalizeText(
+                    element.innerText || element.textContent
+                );
+
+                const title = normalizeText(
+                    element.getAttribute('title')
+                );
+
+                if (
+                    text === 'proceed' ||
+                    title === 'proceed'
+                ) {
+
+                    let clickable = element.closest('button');
+
+                    if (!clickable) {
+                        clickable = element;
+                    }
+
+                    clickable.scrollIntoView({
+                        block: 'center',
+                        inline: 'center'
+                    });
+
+                    clickable.dispatchEvent(
+                        new MouseEvent('mouseover', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window
+                        })
+                    );
+
+                    clickable.dispatchEvent(
+                        new MouseEvent('mousedown', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window
+                        })
+                    );
+
+                    clickable.dispatchEvent(
+                        new MouseEvent('mouseup', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window
+                        })
+                    );
+
+                    clickable.dispatchEvent(
+                        new MouseEvent('click', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window
+                        })
+                    );
+
+                    return true;
+                }
+            }
+
+            return false;
+            """
+        )
+
+        assert clicked is True, \
+            "Proceed button was not found or not clicked"
+
+        logger.info("Proceed button clicked successfully")
+
+        time.sleep(5)
+
+    def is_after_proceed_page_opened(self):
+
+        logger.info("Checking page after clicking Proceed")
+
+        page_text = self.driver.find_element(By.TAG_NAME, "body").text.lower()
+        current_url = self.driver.current_url.lower()
+
+        logger.info(f"Current URL after proceed: {current_url}")
+
+        return (
+            "select address" in page_text
+            or "delivery address" in page_text
+            or "add address" in page_text
+            or "address" in page_text
+            or "payment" in page_text
+            or "login" in page_text
+            or "continue" in page_text
+            or "checkout" in current_url
+            or "address" in current_url
+            or "payment" in current_url
+            or "cart" not in current_url
+        )

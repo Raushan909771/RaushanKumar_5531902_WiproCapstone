@@ -1,148 +1,240 @@
-2026-05-19 22:12:47,285 - INFO - =======================================
-2026-05-19 22:12:47,285 - INFO - Starting test session
-2026-05-19 22:12:47,285 - INFO - Reading Configuration
-2026-05-19 22:12:47,285 - INFO - Browser from config : chrome
-2026-05-19 22:12:47,285 - INFO - Base URL From Config : https://www.apollo247.com/
-2026-05-19 22:12:47,286 - INFO - Headless : False
-2026-05-19 22:12:47,292 - INFO - ====== WebDriver manager ======
-2026-05-19 22:12:50,156 - INFO - Get LATEST chromedriver version for google-chrome
-2026-05-19 22:12:50,591 - INFO - Get LATEST chromedriver version for google-chrome
-2026-05-19 22:12:51,004 - INFO - Driver [C:\Users\kumar\.wdm\drivers\chromedriver\win64\148.0.7778.167\chromedriver-win32/chromedriver.exe] found in cache
-2026-05-19 22:12:52,361 - INFO - Open Browser : chrome
-2026-05-19 22:12:54,569 - INFO - URL Loaded : https://www.apollo247.com/
-2026-05-19 22:12:57,424 - INFO - Trying login with mobile number: 6202615433
-2026-05-19 22:12:57,424 - INFO - Starting login with mobile number
-2026-05-19 22:12:57,424 - INFO - Opening login popup
-2026-05-19 22:12:57,424 - INFO - Checking popup on page
-2026-05-19 22:12:59,433 - INFO - Clicking the element: ('xpath', "//*[contains(text(),'Login') or contains(text(),'Sign in') or contains(text(),'Sign In')]")
-2026-05-19 22:12:59,433 - INFO - Locating the element: ('xpath', "//*[contains(text(),'Login') or contains(text(),'Sign in') or contains(text(),'Sign In')]")
-2026-05-19 22:12:59,538 - INFO - Login clicked using normal Selenium click
-2026-05-19 22:13:01,538 - INFO - Entering mobile number automatically: 6202615433
-2026-05-19 22:13:01,538 - INFO - Locating the element: ('xpath', '//input')
-2026-05-19 22:13:02,654 - INFO - Clicking Continue button
-2026-05-19 22:13:02,655 - INFO - Clicking the element: ('xpath', "//button[contains(text(),'Continue')]")
-2026-05-19 22:13:02,655 - INFO - Locating the element: ('xpath', "//button[contains(text(),'Continue')]")
-2026-05-19 22:13:05,799 - INFO - Checking OTP screen
-2026-05-19 22:13:05,799 - INFO - Checking visibility of element: ('xpath', "//*[contains(text(),'OTP') or contains(text(),'otp') or contains(text(),'Resend') or contains(text(),'sent')]")
-2026-05-19 22:13:05,799 - INFO - Locating the element: ('xpath', "//*[contains(text(),'OTP') or contains(text(),'otp') or contains(text(),'Resend') or contains(text(),'sent')]")
-2026-05-19 22:13:05,819 - INFO - Waiting for OTP entry
-2026-05-19 22:13:15,721 - INFO - OTP entered manually
-2026-05-19 22:13:15,722 - INFO - Submitting OTP
-2026-05-19 22:13:15,791 - INFO - OTP submitted using Enter key
-2026-05-19 22:13:17,792 - INFO - OTP entered and submitted successfully
-2026-05-19 22:13:17,793 - INFO - Test passed: test_login[data0]
-2026-05-19 22:13:17,793 - INFO - Starting screenshot capture process
-2026-05-19 22:13:17,793 - INFO - Screenshots directory created successfully
-2026-05-19 22:13:17,932 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_login_data0__20260519_221317.png
-2026-05-19 22:13:19,285 - INFO - Checking popup on page
-2026-05-19 22:13:19,289 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:13:19,289 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:13:19,318 - INFO - Test passed: test_shop_by_category_data[data0]
-2026-05-19 22:13:19,318 - INFO - Starting screenshot capture process
-2026-05-19 22:13:19,472 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data0__20260519_221319.png
-2026-05-19 22:13:20,412 - INFO - Checking popup on page
-2026-05-19 22:13:20,416 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Pain Relief']")
-2026-05-19 22:13:20,417 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Pain Relief']")
-2026-05-19 22:13:20,443 - INFO - Test passed: test_shop_by_category_data[data1]
-2026-05-19 22:13:20,443 - INFO - Starting screenshot capture process
-2026-05-19 22:13:20,595 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data1__20260519_221320.png
-2026-05-19 22:13:21,583 - INFO - Checking popup on page
-2026-05-19 22:13:21,587 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Baby Care']")
-2026-05-19 22:13:21,587 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Baby Care']")
-2026-05-19 22:13:21,614 - INFO - Test passed: test_shop_by_category_data[data2]
-2026-05-19 22:13:21,615 - INFO - Starting screenshot capture process
-2026-05-19 22:13:21,772 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data2__20260519_221321.png
-2026-05-19 22:13:22,982 - INFO - Checking popup on page
-2026-05-19 22:13:22,987 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Fake Category']")
-2026-05-19 22:13:22,988 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Fake Category']")
-2026-05-19 22:13:25,203 - INFO - Test passed: test_shop_by_category_data[data3]
-2026-05-19 22:13:25,203 - INFO - Starting screenshot capture process
-2026-05-19 22:13:25,352 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data3__20260519_221325.png
-2026-05-19 22:13:26,181 - INFO - Checking popup on page
-2026-05-19 22:13:26,281 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Invalid Product']")
-2026-05-19 22:13:26,282 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Invalid Product']")
-2026-05-19 22:13:28,513 - INFO - Test passed: test_shop_by_category_data[data4]
-2026-05-19 22:13:28,514 - INFO - Starting screenshot capture process
-2026-05-19 22:13:28,652 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data4__20260519_221328.png
-2026-05-19 22:13:29,479 - INFO - Opening Health Monitors category
-2026-05-19 22:13:29,479 - INFO - Checking popup on page
-2026-05-19 22:13:29,484 - INFO - Scrolling to element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:13:29,484 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:13:30,509 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:13:35,603 - INFO - Health Monitors click failed: Message: 
+2026-05-20 23:44:18,153 - INFO - =======================================
+2026-05-20 23:44:18,153 - INFO - Starting test session
+2026-05-20 23:44:18,153 - INFO - Reading Configuration
+2026-05-20 23:44:18,154 - INFO - Browser from config : chrome
+2026-05-20 23:44:18,154 - INFO - Base URL From Config : https://www.apollo247.com/
+2026-05-20 23:44:18,154 - INFO - Headless : False
+2026-05-20 23:44:18,162 - INFO - ====== WebDriver manager ======
+2026-05-20 23:44:22,271 - INFO - Get LATEST chromedriver version for google-chrome
+2026-05-20 23:44:22,778 - INFO - Get LATEST chromedriver version for google-chrome
+2026-05-20 23:44:23,145 - INFO - Driver [C:\Users\kumar\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-05-20 23:44:25,530 - INFO - Open Browser : chrome
+2026-05-20 23:44:29,010 - INFO - URL Loaded : https://www.apollo247.com/
+2026-05-20 23:44:32,356 - INFO - Trying login with mobile number: 8757726775
+2026-05-20 23:44:32,356 - INFO - Starting login with mobile number
+2026-05-20 23:44:32,356 - INFO - Opening login popup
+2026-05-20 23:44:32,357 - INFO - Checking popup on page
+2026-05-20 23:44:34,372 - INFO - Clicking the element: ('xpath', "//*[contains(text(),'Login') or contains(text(),'Sign in') or contains(text(),'Sign In')]")
+2026-05-20 23:44:34,373 - INFO - Locating the element: ('xpath', "//*[contains(text(),'Login') or contains(text(),'Sign in') or contains(text(),'Sign In')]")
+2026-05-20 23:44:34,692 - INFO - Login clicked using normal Selenium click
+2026-05-20 23:44:36,693 - INFO - Entering mobile number automatically: 8757726775
+2026-05-20 23:44:36,694 - INFO - Locating the element: ('xpath', '//input')
+2026-05-20 23:44:37,867 - INFO - Clicking Continue button
+2026-05-20 23:44:37,867 - INFO - Clicking the element: ('xpath', "//button[contains(text(),'Continue')]")
+2026-05-20 23:44:37,867 - INFO - Locating the element: ('xpath', "//button[contains(text(),'Continue')]")
+2026-05-20 23:44:41,115 - INFO - Checking OTP screen
+2026-05-20 23:44:41,115 - INFO - Checking visibility of element: ('xpath', "//*[contains(text(),'OTP') or contains(text(),'otp') or contains(text(),'Resend') or contains(text(),'sent')]")
+2026-05-20 23:44:41,115 - INFO - Locating the element: ('xpath', "//*[contains(text(),'OTP') or contains(text(),'otp') or contains(text(),'Resend') or contains(text(),'sent')]")
+2026-05-20 23:44:41,166 - INFO - Waiting for OTP entry
+2026-05-20 23:44:52,269 - INFO - OTP entered manually
+2026-05-20 23:44:52,270 - INFO - Submitting OTP
+2026-05-20 23:44:52,406 - INFO - OTP submitted using Enter key
+2026-05-20 23:44:54,407 - INFO - OTP entered and submitted successfully
+2026-05-20 23:44:54,408 - INFO - Test passed: test_login[data0]
+2026-05-20 23:44:54,409 - INFO - Starting screenshot capture process
+2026-05-20 23:44:54,410 - INFO - Screenshots directory created successfully
+2026-05-20 23:44:54,585 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_login_data0__20260520_234454.png
+2026-05-20 23:44:57,135 - INFO - Checking popup on page
+2026-05-20 23:44:57,154 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Health Monitors']")
+2026-05-20 23:44:57,155 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+2026-05-20 23:44:57,274 - INFO - Test passed: test_shop_by_category_data[data0]
+2026-05-20 23:44:57,275 - INFO - Starting screenshot capture process
+2026-05-20 23:44:57,507 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data0__20260520_234457.png
+2026-05-20 23:44:58,872 - INFO - Checking popup on page
+2026-05-20 23:44:58,892 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Pain Relief']")
+2026-05-20 23:44:58,893 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Pain Relief']")
+2026-05-20 23:44:59,043 - INFO - Test passed: test_shop_by_category_data[data1]
+2026-05-20 23:44:59,043 - INFO - Starting screenshot capture process
+2026-05-20 23:44:59,286 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data1__20260520_234459.png
+2026-05-20 23:45:00,825 - INFO - Checking popup on page
+2026-05-20 23:45:00,844 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Baby Care']")
+2026-05-20 23:45:00,845 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Baby Care']")
+2026-05-20 23:45:00,974 - INFO - Test passed: test_shop_by_category_data[data2]
+2026-05-20 23:45:00,975 - INFO - Starting screenshot capture process
+2026-05-20 23:45:01,207 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data2__20260520_234500.png
+2026-05-20 23:45:02,586 - INFO - Checking popup on page
+2026-05-20 23:45:02,605 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Fake Category']")
+2026-05-20 23:45:02,606 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Fake Category']")
+2026-05-20 23:45:04,885 - INFO - Test passed: test_shop_by_category_data[data3]
+2026-05-20 23:45:04,885 - INFO - Starting screenshot capture process
+2026-05-20 23:45:05,153 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data3__20260520_234504.png
+2026-05-20 23:45:06,429 - INFO - Checking popup on page
+2026-05-20 23:45:06,448 - INFO - Checking visibility of element: ('xpath', "//*[normalize-space()='Invalid Product']")
+2026-05-20 23:45:06,449 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Invalid Product']")
+2026-05-20 23:45:08,763 - INFO - Test passed: test_shop_by_category_data[data4]
+2026-05-20 23:45:08,764 - INFO - Starting screenshot capture process
+2026-05-20 23:45:08,970 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_shop_by_category_data_data4__20260520_234508.png
+2026-05-20 23:45:10,411 - INFO - Opening Health Monitors category
+2026-05-20 23:45:10,412 - INFO - Checking popup on page
+2026-05-20 23:45:10,440 - INFO - Scrolling to element: ('xpath', "//*[normalize-space()='Health Monitors']")
+2026-05-20 23:45:10,442 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+2026-05-20 23:45:11,518 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+2026-05-20 23:45:16,824 - INFO - Health Monitors click failed: Message: 
 
-2026-05-19 22:13:35,603 - INFO - Opening Health Monitors page directly
-2026-05-19 22:13:42,417 - INFO - Validating Health Monitors page
-2026-05-19 22:13:42,421 - INFO - Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors
-2026-05-19 22:13:42,422 - INFO - Test passed: test_click_health_monitors_category
-2026-05-19 22:13:42,422 - INFO - Starting screenshot capture process
-2026-05-19 22:13:42,505 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_click_health_monitors_category_20260519_221342.png
-2026-05-19 22:13:44,583 - INFO - Opening Health Monitors category
-2026-05-19 22:13:44,583 - INFO - Checking popup on page
-2026-05-19 22:13:44,588 - INFO - Scrolling to element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:13:44,588 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:13:45,620 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:13:50,699 - INFO - Health Monitors click failed: Message: 
+2026-05-20 23:45:16,825 - INFO - Opening Health Monitors page directly
+2026-05-20 23:45:22,704 - INFO - Validating Health Monitors page
+2026-05-20 23:45:22,719 - INFO - Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors
+2026-05-20 23:45:22,720 - INFO - Test passed: test_click_health_monitors_category
+2026-05-20 23:45:22,720 - INFO - Starting screenshot capture process
+2026-05-20 23:45:22,829 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_click_health_monitors_category_20260520_234522.png
+2026-05-20 23:45:24,870 - INFO - Opening Health Monitors category
+2026-05-20 23:45:24,870 - INFO - Checking popup on page
+2026-05-20 23:45:24,884 - INFO - Scrolling to element: ('xpath', "//*[normalize-space()='Health Monitors']")
+2026-05-20 23:45:24,885 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+2026-05-20 23:45:25,992 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+2026-05-20 23:45:31,274 - INFO - Health Monitors click failed: Message: 
 
-2026-05-19 22:13:50,700 - INFO - Opening Health Monitors page directly
-2026-05-19 22:13:55,497 - INFO - Validating Health Monitors page
-2026-05-19 22:13:55,502 - INFO - Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors
-2026-05-19 22:13:55,502 - INFO - Checking Brands filter visibility
-2026-05-19 22:13:55,502 - INFO - Checking visibility of element: ('xpath', "//label[@for='checkboxcategory0']//h3[normalize-space()='Brands']")
-2026-05-19 22:13:55,502 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']//h3[normalize-space()='Brands']")
-2026-05-19 22:13:55,522 - INFO - Applying Doctor S Choice brand filter
-2026-05-19 22:13:55,522 - INFO - Checking popup on page
-2026-05-19 22:13:55,526 - INFO - Opening Brands filter
-2026-05-19 22:13:55,526 - INFO - Checking popup on page
-2026-05-19 22:13:55,530 - INFO - Scrolling to element: ('xpath', "//label[@for='checkboxcategory0']")
-2026-05-19 22:13:55,530 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
-2026-05-19 22:13:55,546 - INFO - Clicking the element: ('xpath', "//label[@for='checkboxcategory0']")
-2026-05-19 22:13:55,546 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
-2026-05-19 22:13:58,646 - INFO - Doctor S Choice filter clicked successfully
-2026-05-19 22:14:03,647 - INFO - Validating Health Monitors page
-2026-05-19 22:14:03,652 - INFO - Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors
-2026-05-19 22:14:03,652 - INFO - Test passed: test_apply_doctor_s_choice_filter_after_health_monitors
-2026-05-19 22:14:03,652 - INFO - Starting screenshot capture process
-2026-05-19 22:14:03,750 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_apply_doctor_s_choice_filter_after_health_monitors_20260519_221403.png
-2026-05-19 22:14:05,777 - INFO - Opening Health Monitors category
-2026-05-19 22:14:05,777 - INFO - Checking popup on page
-2026-05-19 22:14:05,792 - INFO - Scrolling to element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:14:05,793 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:14:06,853 - INFO - Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
-2026-05-19 22:14:11,933 - INFO - Health Monitors click failed: Message: 
-
-2026-05-19 22:14:11,933 - INFO - Opening Health Monitors page directly
-2026-05-19 22:14:16,361 - INFO - Validating Health Monitors page
-2026-05-19 22:14:16,368 - INFO - Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors
-2026-05-19 22:14:16,368 - INFO - Applying Doctor S Choice brand filter
-2026-05-19 22:14:16,368 - INFO - Checking popup on page
-2026-05-19 22:14:16,372 - INFO - Opening Brands filter
-2026-05-19 22:14:16,372 - INFO - Checking popup on page
-2026-05-19 22:14:16,375 - INFO - Scrolling to element: ('xpath', "//label[@for='checkboxcategory0']")
-2026-05-19 22:14:16,375 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
-2026-05-19 22:14:16,394 - INFO - Clicking the element: ('xpath', "//label[@for='checkboxcategory0']")
-2026-05-19 22:14:16,394 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
-2026-05-19 22:14:19,489 - INFO - Doctor S Choice filter clicked successfully
-2026-05-19 22:14:24,490 - INFO - Adding one Doctor S Choice product to cart
-2026-05-19 22:14:24,490 - INFO - Checking popup on page
-2026-05-19 22:14:24,495 - INFO - Finding first available Add button
-2026-05-19 22:14:24,547 - INFO - Available Add button found
-2026-05-19 22:14:25,557 - INFO - Getting product name from selected product card
-2026-05-19 22:14:25,569 - INFO - Selected product name: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
-2026-05-19 22:14:25,569 - INFO - Product selected for cart: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
-2026-05-19 22:14:25,617 - INFO - Clicked Add button only once
-2026-05-19 22:14:30,618 - INFO - Opening cart
-2026-05-19 22:14:30,618 - INFO - Checking popup on page
-2026-05-19 22:14:30,624 - INFO - Clicking the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
-2026-05-19 22:14:30,624 - INFO - Locating the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
-2026-05-19 22:14:35,573 - INFO - Checking cart page
-2026-05-19 22:14:35,578 - INFO - Checking exact product in cart: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
-2026-05-19 22:14:37,579 - INFO - Checking whether cart is empty
-2026-05-19 22:14:37,658 - ERROR - Exact product not found in cart
-2026-05-19 22:14:37,799 - ERROR - Test failed: test_add_doctor_s_choice_product_to_cart
-2026-05-19 22:14:37,799 - INFO - Starting screenshot capture process
-2026-05-19 22:14:37,854 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\failed_test_add_doctor_s_choice_product_to_cart_20260519_221437.png
-2026-05-19 22:14:37,862 - INFO - Waiting 6 seconds before closing browser
-2026-05-19 22:14:46,229 - INFO - Closing the browser
-2026-05-19 22:14:46,230 - INFO - Ending test session
-2026-05-19 22:14:46,230 - INFO - ============================================
+2026-05-20 23:45:31,275 - INFO - Opening Health Monitors page directly
+2026-05-20 23:45:37,302 - INFO - Validating Health Monitors page
+2026-05-20 23:45:37,316 - INFO - Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors
+2026-05-20 23:45:37,317 - INFO - Checking Brands filter visibility
+2026-05-20 23:45:37,318 - INFO - Checking visibility of element: ('xpath', "//label[@for='checkboxcategory0']//h3[normalize-space()='Brands']")
+2026-05-20 23:45:37,318 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']//h3[normalize-space()='Brands']")
+2026-05-20 23:45:37,361 - INFO - Applying Doctor S Choice brand filter
+2026-05-20 23:45:37,361 - INFO - Checking popup on page
+2026-05-20 23:45:37,367 - INFO - Opening Brands filter
+2026-05-20 23:45:37,368 - INFO - Checking popup on page
+2026-05-20 23:45:37,373 - INFO - Scrolling to element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:45:37,373 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:45:37,399 - INFO - Clicking the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:45:37,399 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:45:40,581 - INFO - Doctor S Choice filter clicked successfully
+2026-05-20 23:45:45,583 - INFO - Validating Health Monitors page
+2026-05-20 23:45:45,598 - INFO - Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors
+2026-05-20 23:45:45,598 - INFO - Test passed: test_apply_doctor_s_choice_filter_after_health_monitors
+2026-05-20 23:45:45,599 - INFO - Starting screenshot capture process
+2026-05-20 23:45:45,723 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_apply_doctor_s_choice_filter_after_health_monitors_20260520_234545.png
+2026-05-20 23:45:48,025 - INFO - Adding exact product to cart with retry
+2026-05-20 23:45:48,026 - INFO - Add product attempt: 1
+2026-05-20 23:45:52,716 - INFO - Applying Doctor S Choice brand filter
+2026-05-20 23:45:52,717 - INFO - Checking popup on page
+2026-05-20 23:45:52,739 - INFO - Opening Brands filter
+2026-05-20 23:45:52,739 - INFO - Checking popup on page
+2026-05-20 23:45:52,754 - INFO - Scrolling to element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:45:52,754 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:45:52,813 - INFO - Clicking the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:45:52,813 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:45:55,988 - INFO - Doctor S Choice filter clicked successfully
+2026-05-20 23:46:00,991 - INFO - Finding exact Add button
+2026-05-20 23:46:00,992 - INFO - Locating the element: ('xpath', "(//button[@aria-label='Add' and .//span[normalize-space()='Add']])[1]")
+2026-05-20 23:46:03,054 - INFO - Getting product name from selected Add button
+2026-05-20 23:46:03,075 - INFO - Selected product name: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:46:03,076 - INFO - Trying to add product: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:46:03,076 - INFO - Clicking exact Add button one time
+2026-05-20 23:46:04,138 - INFO - Add button text before click: Add
+2026-05-20 23:46:04,214 - INFO - Clicked Add using normal Selenium click
+2026-05-20 23:46:11,216 - INFO - Opening cart
+2026-05-20 23:46:11,217 - INFO - Checking popup on page
+2026-05-20 23:46:11,234 - INFO - Clicking the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
+2026-05-20 23:46:11,235 - INFO - Locating the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
+2026-05-20 23:46:17,828 - INFO - Checking cart page
+2026-05-20 23:46:17,843 - INFO - Checking exact product in cart: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:46:20,846 - INFO - Checking whether cart is empty
+2026-05-20 23:46:20,877 - ERROR - Cart is empty
+2026-05-20 23:46:20,878 - ERROR - Product not found in cart after Add click
+2026-05-20 23:46:20,878 - INFO - Add product attempt: 2
+2026-05-20 23:46:25,158 - INFO - Applying Doctor S Choice brand filter
+2026-05-20 23:46:25,158 - INFO - Checking popup on page
+2026-05-20 23:46:25,167 - INFO - Opening Brands filter
+2026-05-20 23:46:25,168 - INFO - Checking popup on page
+2026-05-20 23:46:25,174 - INFO - Scrolling to element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:46:25,175 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:46:25,200 - INFO - Clicking the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:46:25,201 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:46:28,372 - INFO - Doctor S Choice filter clicked successfully
+2026-05-20 23:46:33,373 - INFO - Finding exact Add button
+2026-05-20 23:46:33,374 - INFO - Locating the element: ('xpath', "(//button[@aria-label='Add' and .//span[normalize-space()='Add']])[1]")
+2026-05-20 23:46:35,436 - INFO - Getting product name from selected Add button
+2026-05-20 23:46:35,451 - INFO - Selected product name: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:46:35,452 - INFO - Trying to add product: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:46:35,452 - INFO - Clicking exact Add button one time
+2026-05-20 23:46:36,487 - INFO - Add button text before click: Add
+2026-05-20 23:46:36,557 - INFO - Clicked Add using normal Selenium click
+2026-05-20 23:46:43,559 - INFO - Opening cart
+2026-05-20 23:46:43,560 - INFO - Checking popup on page
+2026-05-20 23:46:43,577 - INFO - Clicking the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
+2026-05-20 23:46:43,578 - INFO - Locating the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
+2026-05-20 23:46:49,702 - INFO - Checking cart page
+2026-05-20 23:46:49,708 - INFO - Checking exact product in cart: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:46:52,709 - INFO - Checking whether cart is empty
+2026-05-20 23:46:52,728 - ERROR - Cart is empty
+2026-05-20 23:46:52,729 - ERROR - Product not found in cart after Add click
+2026-05-20 23:46:52,729 - INFO - Add product attempt: 3
+2026-05-20 23:46:56,995 - INFO - Applying Doctor S Choice brand filter
+2026-05-20 23:46:56,996 - INFO - Checking popup on page
+2026-05-20 23:46:57,017 - INFO - Opening Brands filter
+2026-05-20 23:46:57,018 - INFO - Checking popup on page
+2026-05-20 23:46:57,032 - INFO - Scrolling to element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:46:57,032 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:46:57,058 - INFO - Clicking the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:46:57,058 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:47:00,211 - INFO - Doctor S Choice filter clicked successfully
+2026-05-20 23:47:05,212 - INFO - Finding exact Add button
+2026-05-20 23:47:05,213 - INFO - Locating the element: ('xpath', "(//button[@aria-label='Add' and .//span[normalize-space()='Add']])[1]")
+2026-05-20 23:47:07,277 - INFO - Getting product name from selected Add button
+2026-05-20 23:47:07,283 - INFO - Selected product name: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:47:07,284 - INFO - Trying to add product: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:47:07,284 - INFO - Clicking exact Add button one time
+2026-05-20 23:47:08,322 - INFO - Add button text before click: Add
+2026-05-20 23:47:08,424 - INFO - Clicked Add using normal Selenium click
+2026-05-20 23:47:15,426 - INFO - Opening cart
+2026-05-20 23:47:15,426 - INFO - Checking popup on page
+2026-05-20 23:47:15,443 - INFO - Clicking the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
+2026-05-20 23:47:15,443 - INFO - Locating the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
+2026-05-20 23:47:22,589 - INFO - Checking cart page
+2026-05-20 23:47:22,603 - INFO - Checking exact product in cart: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:47:25,605 - INFO - Checking whether cart is empty
+2026-05-20 23:47:25,745 - INFO - Exact product found in cart
+2026-05-20 23:47:25,745 - INFO - Product added and verified in cart successfully
+2026-05-20 23:47:25,745 - INFO - Checking cart page
+2026-05-20 23:47:25,752 - INFO - Checking exact product in cart: Apollo Pharmacy Blood Glucose Test Strips, 50 Count
+2026-05-20 23:47:28,753 - INFO - Checking whether cart is empty
+2026-05-20 23:47:28,889 - INFO - Exact product found in cart
+2026-05-20 23:47:28,890 - INFO - Test passed: test_add_doctor_s_choice_product_to_cart
+2026-05-20 23:47:28,890 - INFO - Starting screenshot capture process
+2026-05-20 23:47:28,964 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_add_doctor_s_choice_product_to_cart_20260520_234728.png
+2026-05-20 23:47:31,310 - INFO - Adding exact product to cart with retry
+2026-05-20 23:47:31,311 - INFO - Add product attempt: 1
+2026-05-20 23:47:37,070 - INFO - Applying Doctor S Choice brand filter
+2026-05-20 23:47:37,072 - INFO - Checking popup on page
+2026-05-20 23:47:37,091 - INFO - Opening Brands filter
+2026-05-20 23:47:37,092 - INFO - Checking popup on page
+2026-05-20 23:47:37,107 - INFO - Scrolling to element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:47:37,108 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:47:37,154 - INFO - Clicking the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:47:37,154 - INFO - Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+2026-05-20 23:47:40,324 - INFO - Doctor S Choice filter clicked successfully
+2026-05-20 23:47:45,326 - INFO - Finding exact Add button
+2026-05-20 23:47:45,327 - INFO - Locating the element: ('xpath', "(//button[@aria-label='Add' and .//span[normalize-space()='Add']])[1]")
+2026-05-20 23:47:47,388 - INFO - Getting product name from selected Add button
+2026-05-20 23:47:47,408 - INFO - Selected product name: Apollo Pharmacy Smart Blood Glucose Monitoring Bluetooth System with Diabetes Management App, APG-01 + 25 Test Strips, 1 kit
+2026-05-20 23:47:47,409 - INFO - Trying to add product: Apollo Pharmacy Smart Blood Glucose Monitoring Bluetooth System with Diabetes Management App, APG-01 + 25 Test Strips, 1 kit
+2026-05-20 23:47:47,410 - INFO - Clicking exact Add button one time
+2026-05-20 23:47:48,448 - INFO - Add button text before click: Add
+2026-05-20 23:47:48,518 - INFO - Clicked Add using normal Selenium click
+2026-05-20 23:47:55,519 - INFO - Opening cart
+2026-05-20 23:47:55,520 - INFO - Checking popup on page
+2026-05-20 23:47:55,539 - INFO - Clicking the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
+2026-05-20 23:47:55,539 - INFO - Locating the element: ('xpath', "//*[contains(@href,'cart') or contains(@class,'cart') or contains(text(),'Cart')]")
+2026-05-20 23:48:01,652 - INFO - Checking cart page
+2026-05-20 23:48:01,666 - INFO - Checking exact product in cart: Apollo Pharmacy Smart Blood Glucose Monitoring Bluetooth System with Diabetes Management App, APG-01 + 25 Test Strips, 1 kit
+2026-05-20 23:48:04,668 - INFO - Checking whether cart is empty
+2026-05-20 23:48:04,783 - INFO - Exact product found in cart
+2026-05-20 23:48:04,783 - INFO - Product added and verified in cart successfully
+2026-05-20 23:48:04,783 - INFO - Checking cart page
+2026-05-20 23:48:04,788 - INFO - Checking exact product in cart: Apollo Pharmacy Smart Blood Glucose Monitoring Bluetooth System with Diabetes Management App, APG-01 + 25 Test Strips, 1 kit
+2026-05-20 23:48:07,790 - INFO - Checking whether cart is empty
+2026-05-20 23:48:07,937 - INFO - Exact product found in cart
+2026-05-20 23:48:07,937 - INFO - Clicking Proceed button on cart page
+2026-05-20 23:48:07,937 - INFO - Checking cart page
+2026-05-20 23:48:07,944 - INFO - Checking whether cart is empty
+2026-05-20 23:48:11,013 - INFO - Proceed button clicked successfully
+2026-05-20 23:48:16,014 - INFO - Checking page after clicking Proceed
+2026-05-20 23:48:16,148 - INFO - Current URL after proceed: https://www.apollopharmacy.in/medicines-cart?source=apollo%20brand%20health%20monitors
+2026-05-20 23:48:16,148 - INFO - Test passed: test_proceed_after_adding_product_to_cart
+2026-05-20 23:48:16,148 - INFO - Starting screenshot capture process
+2026-05-20 23:48:16,228 - INFO - Screenshot captured successfully: C:\CapstoneProject\ApolloAutomation\reports\screenshots\passed_test_proceed_after_adding_product_to_cart_20260520_234816.png
+2026-05-20 23:48:16,240 - INFO - Waiting 6 seconds before closing browser
+2026-05-20 23:48:24,848 - INFO - Closing the browser
+2026-05-20 23:48:24,849 - INFO - Ending test session
+2026-05-20 23:48:24,850 - INFO - ============================================

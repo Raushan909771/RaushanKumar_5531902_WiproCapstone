@@ -1,0 +1,24 @@
+[32mINFO    [0m root:shopbycategorypage.py:71 Opening Health Monitors category
+[32mINFO    [0m root:basepage.py:73 Checking popup on page
+[32mINFO    [0m root:basepage.py:45 Scrolling to element: ('xpath', "//*[normalize-space()='Health Monitors']")
+[32mINFO    [0m root:basepage.py:18 Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+[32mINFO    [0m root:basepage.py:18 Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+[32mINFO    [0m root:shopbycategorypage.py:97 Health Monitors click failed: Message: 
+
+[32mINFO    [0m root:shopbycategorypage.py:98 Opening Health Monitors page directly
+[32mINFO    [0m root:shopbycategorypage.py:111 Validating Health Monitors page
+[32mINFO    [0m root:shopbycategorypage.py:115 Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors
+[32mINFO    [0m root:shopbycategorypage.py:121 Checking Brands filter visibility
+[32mINFO    [0m root:basepage.py:33 Checking visibility of element: ('xpath', "//label[@for='checkboxcategory0']//h3[normalize-space()='Brands']")
+[32mINFO    [0m root:basepage.py:18 Locating the element: ('xpath', "//label[@for='checkboxcategory0']//h3[normalize-space()='Brands']")
+[32mINFO    [0m root:shopbycategorypage.py:144 Applying Doctor S Choice brand filter
+[32mINFO    [0m root:basepage.py:73 Checking popup on page
+[32mINFO    [0m root:shopbycategorypage.py:127 Opening Brands filter
+[32mINFO    [0m root:basepage.py:73 Checking popup on page
+[32mINFO    [0m root:basepage.py:45 Scrolling to element: ('xpath', "//label[@for='checkboxcategory0']")
+[32mINFO    [0m root:basepage.py:18 Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+[32mINFO    [0m root:basepage.py:23 Clicking the element: ('xpath', "//label[@for='checkboxcategory0']")
+[32mINFO    [0m root:basepage.py:18 Locating the element: ('xpath', "//label[@for='checkboxcategory0']")
+[32mINFO    [0m root:shopbycategorypage.py:176 Doctor S Choice filter clicked successfully
+[32mINFO    [0m root:shopbycategorypage.py:111 Validating Health Monitors page
+[32mINFO    [0m root:shopbycategorypage.py:115 Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors

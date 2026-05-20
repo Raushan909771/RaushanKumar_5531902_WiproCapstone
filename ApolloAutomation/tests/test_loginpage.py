@@ -31,7 +31,7 @@ def test_login(driver, data):
     print("\nEnter OTP manually in browser.")
     print("Do not press anything in terminal.")
     print("Automation will continue automatically after OTP is entered.")
-    print("Maximum wait time is 30 seconds.\n")
+    print("Maximum wait time is 60 seconds.\n")
 
     otp_submitted = login_page.wait_for_otp_entry_and_submit(
         mobile_number,

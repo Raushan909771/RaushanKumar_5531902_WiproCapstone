@@ -129,7 +129,7 @@ class LoginPage(BasePage):
 
         return self.is_visible(self.OTP_SCREEN_TEXT, timeout=10)
 
-    def wait_for_otp_entry_and_submit(self, mobile_number, timeout=30):
+    def wait_for_otp_entry_and_submit(self, mobile_number, timeout=60):
 
         logger.info("Waiting for OTP entry")
 
