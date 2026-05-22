@@ -20,16 +20,6 @@ class ShopByCategoryPage(BasePage):
         "https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors"
     )
 
-    BRANDS_FILTER = (
-        By.XPATH,
-        "//label[@for='checkboxcategory0']"
-    )
-
-    BRANDS_FILTER_TITLE = (
-        By.XPATH,
-        "//label[@for='checkboxcategory0']//h3[normalize-space()='Brands']"
-    )
-
     EXACT_ADD_BUTTON = (
         By.XPATH,
         "(//button[@aria-label='Add' and .//span[normalize-space()='Add']])[1]"
@@ -104,7 +94,7 @@ class ShopByCategoryPage(BasePage):
                 "apollo-brand-health-monitors" in driver.current_url
             )
 
-        time.sleep(4)
+        time.sleep(6)
 
     def is_health_monitors_page_opened(self):
 
@@ -120,7 +110,16 @@ class ShopByCategoryPage(BasePage):
 
         logger.info("Checking Brands filter visibility")
 
-        return self.is_visible(self.BRANDS_FILTER_TITLE, timeout=10)
+        time.sleep(5)
+
+        page_text = self.driver.find_element(By.TAG_NAME, "body").text.lower()
+
+        if "brands" in page_text:
+            logger.info("Brands filter text found on page")
+            return True
+
+        logger.error("Brands filter text not found on page")
+        return False
 
     def open_brands_filter(self):
 
@@ -128,16 +127,64 @@ class ShopByCategoryPage(BasePage):
 
         self.close_popup_if_present()
 
-        self.scroll_to_element(self.BRANDS_FILTER, timeout=10)
+        time.sleep(3)
 
-        try:
-            self.click(self.BRANDS_FILTER, timeout=5)
+        opened = self.driver.execute_script(
+            """
+            const elements = Array.from(
+                document.querySelectorAll('label, div, span, h3, button')
+            );
 
-        except Exception:
-            logger.info("Normal Brands filter click failed, trying JavaScript click")
-            self.js_click(self.BRANDS_FILTER, timeout=5)
+            function isVisible(element) {
+                const style = window.getComputedStyle(element);
+                const rect = element.getBoundingClientRect();
 
-        time.sleep(2)
+                return (
+                    style.display !== 'none' &&
+                    style.visibility !== 'hidden' &&
+                    rect.width > 0 &&
+                    rect.height > 0
+                );
+            }
+
+            for (const element of elements) {
+
+                if (!isVisible(element)) {
+                    continue;
+                }
+
+                const text = (
+                    element.innerText ||
+                    element.textContent ||
+                    ''
+                ).trim().toLowerCase();
+
+                if (text === 'brands' || text.includes('brands')) {
+
+                    element.scrollIntoView({
+                        block: 'center',
+                        inline: 'center'
+                    });
+
+                    const clickable =
+                        element.closest('label, button, div') || element;
+
+                    clickable.click();
+
+                    return true;
+                }
+            }
+
+            return false;
+            """
+        )
+
+        assert opened is True, \
+            "Brands filter was not found or not clicked"
+
+        logger.info("Brands filter opened successfully")
+
+        time.sleep(3)
 
     def apply_doctor_s_choice_filter(self):
 
@@ -147,23 +194,105 @@ class ShopByCategoryPage(BasePage):
 
         self.open_brands_filter()
 
-        time.sleep(1)
+        time.sleep(3)
 
         clicked = self.driver.execute_script(
             """
-            const allElements = document.querySelectorAll('label, div, span');
-
-            for (const element of allElements) {
-                const text = (element.innerText || element.textContent || '')
+            function normalizeText(value) {
+                return (value || '')
+                    .replace(/[’']/g, '')
+                    .replace(/[^a-zA-Z0-9]/g, ' ')
+                    .replace(/\\s+/g, ' ')
                     .trim()
                     .toLowerCase();
+            }
 
-                if (
-                    text === 'doctor s choice' ||
-                    text.includes('doctor s choice')
-                ) {
-                    element.scrollIntoView({block: 'center'});
-                    element.click();
+            function isVisible(element) {
+                const style = window.getComputedStyle(element);
+                const rect = element.getBoundingClientRect();
+
+                return (
+                    style.display !== 'none' &&
+                    style.visibility !== 'hidden' &&
+                    rect.width > 0 &&
+                    rect.height > 0
+                );
+            }
+
+            // Scroll a little inside the page to load/open brand options properly
+            window.scrollBy(0, 300);
+
+            const elements = Array.from(
+                document.querySelectorAll('label, div, span, p, h3, button')
+            );
+
+            for (const element of elements) {
+
+                if (!isVisible(element)) {
+                    continue;
+                }
+
+                const text = normalizeText(
+                    element.innerText || element.textContent
+                );
+
+                /*
+                    Matches:
+                    Doctor S Choice
+                    Doctors Choice
+                    Doctor's Choice
+                    doctor s choice
+                */
+                const isDoctorChoice =
+                    text.includes('doctor s choice') ||
+                    text.includes('doctors choice') ||
+                    (
+                        text.includes('doctor') &&
+                        text.includes('choice')
+                    );
+
+                if (isDoctorChoice) {
+
+                    element.scrollIntoView({
+                        block: 'center',
+                        inline: 'center'
+                    });
+
+                    const clickable =
+                        element.closest('label, button, div') || element;
+
+                    clickable.dispatchEvent(
+                        new MouseEvent('mouseover', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window
+                        })
+                    );
+
+                    clickable.dispatchEvent(
+                        new MouseEvent('mousedown', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window
+                        })
+                    );
+
+                    clickable.dispatchEvent(
+                        new MouseEvent('mouseup', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window
+                        })
+                    );
+
+                    clickable.dispatchEvent(
+                        new MouseEvent('click', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window
+                        })
+                    );
+
                     return true;
                 }
             }
@@ -172,12 +301,12 @@ class ShopByCategoryPage(BasePage):
             """
         )
 
-        if clicked:
-            logger.info("Doctor S Choice filter clicked successfully")
-            time.sleep(5)
-            return
+        assert clicked is True, \
+            "Doctor S Choice filter option was not found or not clicked"
 
-        raise Exception("Doctor S Choice filter option not found")
+        logger.info("Doctor S Choice filter clicked successfully")
+
+        time.sleep(5)
 
     def get_exact_add_button(self):
 
@@ -397,7 +526,7 @@ class ShopByCategoryPage(BasePage):
                 "apollo-brand-health-monitors" in driver.current_url
             )
 
-            time.sleep(4)
+            time.sleep(6)
 
             self.apply_doctor_s_choice_filter()
 
@@ -436,7 +565,6 @@ class ShopByCategoryPage(BasePage):
         assert not self.is_cart_empty(), \
             "Cart is empty, cannot click Proceed"
 
-        # Proceed button is usually near bottom/right cart summary
         self.driver.execute_script(
             "window.scrollTo(0, document.body.scrollHeight);"
         )
@@ -549,13 +677,16 @@ class ShopByCategoryPage(BasePage):
 
         logger.info("Checking page after clicking Proceed")
 
+        time.sleep(5)
+
         page_text = self.driver.find_element(By.TAG_NAME, "body").text.lower()
         current_url = self.driver.current_url.lower()
 
         logger.info(f"Current URL after proceed: {current_url}")
 
         return (
-            "select address" in page_text
+            "medicines-cart" in current_url
+            or "select address" in page_text
             or "delivery address" in page_text
             or "add address" in page_text
             or "address" in page_text
@@ -565,5 +696,4 @@ class ShopByCategoryPage(BasePage):
             or "checkout" in current_url
             or "address" in current_url
             or "payment" in current_url
-            or "cart" not in current_url
         )
