@@ -1,0 +1,10 @@
+[32mINFO    [0m root:shopbycategorypage.py:61 Opening Health Monitors category
+[32mINFO    [0m root:basepage.py:73 Checking popup on page
+[32mINFO    [0m root:basepage.py:45 Scrolling to element: ('xpath', "//*[normalize-space()='Health Monitors']")
+[32mINFO    [0m root:basepage.py:18 Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+[32mINFO    [0m root:basepage.py:18 Locating the element: ('xpath', "//*[normalize-space()='Health Monitors']")
+[32mINFO    [0m root:shopbycategorypage.py:87 Health Monitors click failed: Message: 
+
+[32mINFO    [0m root:shopbycategorypage.py:88 Opening Health Monitors page directly
+[32mINFO    [0m root:shopbycategorypage.py:101 Validating Health Monitors page
+[32mINFO    [0m root:shopbycategorypage.py:105 Current URL is: https://www.apollopharmacy.in/shop-by-category/apollo-brand-health-monitors

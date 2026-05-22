@@ -10,6 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from utils.config_reader import ConfigReader
 from utils.logger import LogGen
 from utils.screenshot_util import ScreenshotUtil
+from utils.allure_report_generator import AllureReportGenerator
 
 logger = LogGen.loggen()
 
@@ -55,6 +56,7 @@ def driver():
         )
 
     else:
+
         raise Exception("Only Chrome browser is supported for this project")
 
     logger.info(f"Open Browser : {browser}")
@@ -101,6 +103,7 @@ def pytest_runtest_makereport(item, call):
                 )
 
                 with open(screenshot_path, "rb") as image_file:
+
                     allure.attach(
                         image_file.read(),
                         name=f"PASSED_{test_name}",
@@ -117,8 +120,17 @@ def pytest_runtest_makereport(item, call):
                 )
 
                 with open(screenshot_path, "rb") as image_file:
+
                     allure.attach(
                         image_file.read(),
                         name=f"FAILED_{test_name}",
                         attachment_type=allure.attachment_type.PNG
                     )
+
+
+def pytest_sessionfinish(session, exitstatus):
+
+    logger.info("Test session finished")
+    logger.info("Generating Allure report automatically")
+
+    AllureReportGenerator.generate_report()
