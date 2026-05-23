@@ -1,0 +1,58 @@
+Feature: Apollo login # features/login.feature:1
+
+  Scenario: Login with valid mobile number and OTP  # features/login.feature:3
+    Given user opens Apollo application             # features/steps/login_steps.py:7
+    When user enters valid mobile number            # features/steps/login_steps.py:13
+    Then OTP screen should be visible               # features/steps/login_steps.py:25
+    When user enters OTP manually                   # features/steps/login_steps.py:32
+    Then login should be submitted successfully     # features/steps/login_steps.py:47
+
+Feature: Apollo shop by category # features/shop_by_category.feature:1
+
+  Scenario Outline: Validate category visibility -- @1.1   # features/shop_by_category.feature:9
+    Given user opens Apollo application                    # features/steps/login_steps.py:7
+    Then category "Health Monitors" should be "visible"    # features/steps/shop_steps.py:6
+
+  Scenario Outline: Validate category visibility -- @1.2   # features/shop_by_category.feature:10
+    Given user opens Apollo application                    # features/steps/login_steps.py:7
+    Then category "Pain Relief" should be "visible"        # features/steps/shop_steps.py:6
+
+  Scenario Outline: Validate category visibility -- @1.3   # features/shop_by_category.feature:11
+    Given user opens Apollo application                    # features/steps/login_steps.py:7
+    Then category "Baby Care" should be "visible"          # features/steps/shop_steps.py:6
+
+  Scenario Outline: Validate category visibility -- @1.4   # features/shop_by_category.feature:12
+    Given user opens Apollo application                    # features/steps/login_steps.py:7
+    Then category "Fake Category" should be "not_visible"  # features/steps/shop_steps.py:6
+
+  Scenario Outline: Validate category visibility -- @1.5    # features/shop_by_category.feature:13
+    Given user opens Apollo application                     # features/steps/login_steps.py:7
+    Then category "Invalid Product" should be "not_visible" # features/steps/shop_steps.py:6
+
+  Scenario: Open Health Monitors category      # features/shop_by_category.feature:15
+    Given user opens Apollo application        # features/steps/login_steps.py:7
+    When user opens Health Monitors category   # features/steps/shop_steps.py:32
+    Then Health Monitors page should be opened # features/steps/shop_steps.py:42
+
+  Scenario: Apply Doctor S Choice filter       # features/shop_by_category.feature:20
+    Given user opens Apollo application        # features/steps/login_steps.py:7
+    When user opens Health Monitors category   # features/steps/shop_steps.py:32
+    Then Health Monitors page should be opened # features/steps/shop_steps.py:42
+    Then Brands filter should be visible       # features/steps/shop_steps.py:55
+    When user applies Doctor S Choice filter   # features/steps/shop_steps.py:62
+    Then Health Monitors page should be opened # features/steps/shop_steps.py:42
+
+  Scenario: Add Doctor S Choice product to cart     # features/shop_by_category.feature:28
+    Given user opens Apollo application             # features/steps/login_steps.py:7
+    When user adds Doctor S Choice product to cart  # features/steps/shop_steps.py:68
+    Then cart page should be opened                 # features/steps/shop_steps.py:85
+    Then selected product should be present in cart # features/steps/shop_steps.py:92
+
+  Scenario: Proceed after adding product to cart    # features/shop_by_category.feature:34
+    Given user opens Apollo application             # features/steps/login_steps.py:7
+    When user adds Doctor S Choice product to cart  # features/steps/shop_steps.py:68
+    Then cart page should be opened                 # features/steps/shop_steps.py:85
+    Then selected product should be present in cart # features/steps/shop_steps.py:92
+    When user clicks Proceed button                 # features/steps/shop_steps.py:100
+    Then next cart step should be opened            # features/steps/shop_steps.py:106
+

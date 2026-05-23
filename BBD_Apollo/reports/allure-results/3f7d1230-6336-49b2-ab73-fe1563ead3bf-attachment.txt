@@ -1,0 +1,33 @@
+2026-05-23 12:11:11,955 - INFO - ============================================
+2026-05-23 12:11:11,956 - INFO - AUTOMATION EXECUTION STARTED
+2026-05-23 12:11:11,956 - INFO - Execution timestamp: 20260523_121111
+2026-05-23 12:11:11,957 - INFO - Running command: behave -f allure_behave.formatter:AllureFormatter -o reports\allure-results features
+2026-05-23 12:11:12,762 - INFO - =======================================
+2026-05-23 12:11:12,762 - INFO - BDD AUTOMATION EXECUTION STARTED
+2026-05-23 12:11:12,763 - INFO - Browser from config: chrome
+2026-05-23 12:11:12,763 - INFO - Headless mode: False
+2026-05-23 12:11:12,769 - INFO - ====== WebDriver manager ======
+2026-05-23 12:11:14,924 - INFO - Driver [C:\Users\kumar\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-23 12:11:15,848 - INFO - Chrome browser launched successfully
+2026-05-23 12:11:15,852 - INFO - ------------------------------------------------
+2026-05-23 12:11:15,853 - INFO - Scenario started: Login with valid mobile number and OTP
+2026-05-23 12:11:15,854 - INFO - ------------------------------------------------
+2026-05-23 12:11:19,030 - INFO - Starting login with mobile number
+2026-05-23 12:11:19,033 - INFO - Opening login popup
+2026-05-23 12:11:19,034 - INFO - Checking popup on page
+2026-05-23 12:11:21,104 - INFO - Clicking element: ('xpath', "//*[contains(text(),'Login') or contains(text(),'Sign in') or contains(text(),'Sign In')]")
+2026-05-23 12:11:21,104 - INFO - Locating element: ('xpath', "//*[contains(text(),'Login') or contains(text(),'Sign in') or contains(text(),'Sign In')]")
+2026-05-23 12:11:23,696 - INFO - Locating element: ('xpath', '//input')
+2026-05-23 12:11:24,798 - INFO - Clicking element: ('xpath', "//button[contains(text(),'Continue')]")
+2026-05-23 12:11:24,798 - INFO - Locating element: ('xpath', "//button[contains(text(),'Continue')]")
+2026-05-23 12:11:27,965 - INFO - Checking OTP screen
+2026-05-23 12:11:27,965 - INFO - Locating element: ('xpath', "//*[contains(text(),'OTP') or contains(text(),'otp') or contains(text(),'Resend') or contains(text(),'sent')]")
+2026-05-23 12:11:27,992 - INFO - Waiting for OTP entry
+2026-05-23 12:11:40,144 - INFO - OTP entered manually
+2026-05-23 12:11:40,188 - INFO - OTP submitted using Enter key
+2026-05-23 12:11:42,191 - INFO - ------------------------------------------------
+2026-05-23 12:11:42,191 - INFO - Scenario finished: Login with valid mobile number and OTP
+2026-05-23 12:11:42,191 - INFO - Scenario status: passed
+2026-05-23 12:11:42,192 - INFO - ------------------------------------------------
+2026-05-23 12:11:42,382 - INFO - Screenshot captured successfully: C:\CapstoneProject\BBD_Apollo\reports\screenshots\passed_login_with_valid_mobile_number_and_otp_20260523_121142.png
+2026-05-23 12:11:42,396 - INFO - Screenshot attached to Allure report
